@@ -1,0 +1,2 @@
+patient,sample,status,fastq_1,fastq_2
+T1,T1-X,1,test_fastqs/T1-X_R1_001.fastq.gz,test_fastqs/T1-X_R2_001.fastq.gz

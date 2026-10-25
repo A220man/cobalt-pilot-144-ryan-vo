@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "current_feature": "sarek-fastq-validation-fix",
+  "features": [
+    {
+      "id": "sarek-fastq-validation-fix",
+      "title": "Fix Sarek FASTQ samplesheet validation - BAM/BAI not required for FASTQ input",
+      "status": "done",
+      "acceptance": [
+        "FASTQ input rows pass validation without BAM/BAI columns",
+        "BAM/CRAM input rows still require BAM/BAI columns",
+        "Validation logic respects input_type conditional requirements from sarek.yaml config"
+      ],
+      "implementation": [
+        "bio-research/skills/nextflow-development/scripts/utils/validators.py",
+        "bio-research/skills/nextflow-development/scripts/config/pipelines/sarek.yaml",
+        "bio-research/skills/nextflow-development/scripts/generate_samplesheet.py"
+      ],
+      "tests": [
+        "bio-research/skills/nextflow-development/tests/test_validators.py"
+      ]
+    },
+    {
+      "id": "stability-frontmatter",
+      "title": "Add stability lifecycle frontmatter to skills (experimental/stable/deprecated)",
+      "status": "planned",
+      "acceptance": [
+        "SKILL.md schema includes stability field with enum: experimental|stable|deprecated",
+        "Existing skills updated with appropriate stability values",
+        "Plugin README documents the stability field"
+      ],
+      "implementation": [],
+      "tests": []
+    },
+    {
+      "id": "chinese-content-quality-skill",
+      "title": "Add Chinese content quality / anti-AI-slop skill for marketing plugin",
+      "status": "planned",
+      "acceptance": [
+        "Skill detects 30+ banned Chinese AI filler phrases",
+        "Skill enforces Chinese punctuation rules",
+        "Skill provides 50+ recommended colloquial expressions",
+        "4-layer quality check system implemented"
+      ],
+      "implementation": [],
+      "tests": []
+    }
+  ]
+}

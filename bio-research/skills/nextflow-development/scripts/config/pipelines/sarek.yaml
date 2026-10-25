@@ -1,0 +1,93 @@
+# Sarek Pipeline Configuration
+# Defines samplesheet schema and validation rules for the Sarek pipeline
+
+pipeline: "sarek"
+version: "3.4.0"
+description: "Somatic variant calling and analysis pipeline"
+
+# Column definitions for samplesheet
+columns:
+  # Required for all input types
+  - name: "patient"
+    required: true
+    description: "Patient identifier"
+    type: "string"
+  
+  - name: "sample"
+    required: true
+    description: "Sample identifier"
+    type: "string"
+  
+  - name: "status"
+    required: true
+    description: "Sample status (0=normal, 1=tumor)"
+    type: "integer"
+    enum: [0, 1]
+  
+  # FASTQ-specific columns (required when input_type is fastq)
+  - name: "fastq_1"
+    required: false
+    description: "Path to R1 FASTQ file"
+    type: "string"
+    conditional:
+      input_type: "fastq"
+      required_when: true
+  
+  - name: "fastq_2"
+    required: false
+    description: "Path to R2 FASTQ file (paired-end)"
+    type: "string"
+    conditional:
+      input_type: "fastq"
+      required_when: true
+  
+  # BAM/CRAM-specific columns (required when input_type is bam or cram)
+  - name: "bam"
+    required: false
+    description: "Path to BAM file"
+    type: "string"
+    conditional:
+      input_type: ["bam", "cram"]
+      required_when: true
+  
+  - name: "bai"
+    required: false
+    description: "Path to BAI index file"
+    type: "string"
+    conditional:
+      input_type: ["bam", "cram"]
+      required_when: true
+
+# Input type definitions
+input_types:
+  - name: "fastq"
+    description: "Paired-end FASTQ files"
+    required_columns: ["patient", "sample", "status", "fastq_1", "fastq_2"]
+  
+  - name: "bam"
+    description: "BAM file with index"
+    required_columns: ["patient", "sample", "status", "bam", "bai"]
+  
+  - name: "cram"
+    description: "CRAM file with index"
+    required_columns: ["patient", "sample", "status", "bam", "bai"]
+
+# Validation rules
+validation:
+  # Columns that are always required regardless of input type
+  always_required:
+    - "patient"
+    - "sample"
+    - "status"
+  
+  # Conditional requirements based on input_type
+  conditional_required:
+    fastq:
+      - "fastq_1"
+      - "fastq_2"
+    bam:
+      - "bam"
+      - "bai"
+    cram:
+      - "bam"
+      - "bai"
