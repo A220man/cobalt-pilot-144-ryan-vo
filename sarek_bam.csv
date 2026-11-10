@@ -1,0 +1,2 @@
+patient,sample,status,bam,bai
+T1,T1-X,1,test_bam/T1-X.bam,test_bam/T1-X.bam.bai
