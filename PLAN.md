@@ -4,7 +4,7 @@ Each round completes one feature or repair. Future items are planned, not implem
 
 ## Current round
 
-sarek-fastq-validation-fix
+stability-frontmatter
 
 ## Roadmap
 
@@ -23,7 +23,7 @@ Tests: `bio-research/skills/nextflow-development/tests/test_validators.py`
 
 ### stability-frontmatter — Add stability lifecycle frontmatter to skills (experimental/stable/deprecated)
 
-Status: planned
+Status: in_progress
 
 Acceptance:
 - SKILL.md schema includes stability field with enum: experimental|stable|deprecated

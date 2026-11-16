@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "current_feature": "sarek-fastq-validation-fix",
+  "current_feature": "stability-frontmatter",
   "features": [
     {
       "id": "sarek-fastq-validation-fix",
@@ -23,7 +23,7 @@
     {
       "id": "stability-frontmatter",
       "title": "Add stability lifecycle frontmatter to skills (experimental/stable/deprecated)",
-      "status": "planned",
+      "status": "in_progress",
       "acceptance": [
         "SKILL.md schema includes stability field with enum: experimental|stable|deprecated",
         "Existing skills updated with appropriate stability values",
