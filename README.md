@@ -1,6 +1,6 @@
 # cobalt-pilot-144-ryan-vo — Ryan Vo
 
-Current version: `1.5.0`.
+Current version: `1.6.0`.
 
 > Work in progress. This checkpoint may be incomplete or fail tests. See PLAN.md and STATUS.md before use.
 
@@ -24,10 +24,17 @@ Fixed Sarek FASTQ samplesheet validation bug where BAM and BAI columns were inco
 - BAM/CRAM input rows still require BAM/BAI columns
 - All 7 unit tests pass
 - End-to-end integration tests pass
+### stability-frontmatter
+
+Added stability lifecycle frontmatter to skills (experimental/stable/deprecated).
+
+- SKILL.md schema includes `stability` field with enum: `experimental` | `stable` | `deprecated`
+- `stability-demo/SKILL.md` updated with `stability: stable` frontmatter
+- README documents the stability field for agent filtering
+
 
 ## Planned Features
 
-1. **stability-frontmatter** - Add stability lifecycle frontmatter to skills (experimental/stable/deprecated)
 2. **chinese-content-quality-skill** - Add Chinese content quality / anti-AI-slop skill for marketing plugin
 
 ## Development
