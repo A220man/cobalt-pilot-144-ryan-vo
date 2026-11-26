@@ -29,8 +29,16 @@
         "Existing skills updated with appropriate stability values",
         "Plugin README documents the stability field"
       ],
-      "implementation": [],
-      "tests": []
+      "implementation": [
+        "bio-research/skills/deprecated-demo/SKILL.md (stability: deprecated)",
+        "bio-research/skills/experimental-demo/SKILL.md (stability: experimental)",
+        "bio-research/skills/stability-demo/SKILL.md (stability: stable)",
+        "bio-research/skills/stability.py (parse/read/validate stability frontmatter + CLI)"
+      ],
+      "tests": [
+        "bio-research/skills/tests/test_skill_stability.py",
+        "bio-research/skills/tests/test_stability_module.py"
+      ]
     },
     {
       "id": "chinese-content-quality-skill",
