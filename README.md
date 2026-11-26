@@ -1,6 +1,6 @@
 # cobalt-pilot-144-ryan-vo — Ryan Vo
 
-Current version: `1.6.0`.
+Current version: `1.7.0`.
 
 > Work in progress. This checkpoint may be incomplete or fail tests. See PLAN.md and STATUS.md before use.
 
@@ -30,6 +30,8 @@ Added stability lifecycle frontmatter to skills (experimental/stable/deprecated)
 
 - SKILL.md schema includes `stability` field with enum: `experimental` | `stable` | `deprecated`
 - `stability-demo/SKILL.md` updated with `stability: stable` frontmatter
+- `experimental-demo/SKILL.md` with `stability: experimental` frontmatter
+- `deprecated-demo/SKILL.md` with `stability: deprecated` frontmatter
 - README documents the stability field for agent filtering
 
 

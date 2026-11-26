@@ -30,6 +30,10 @@ Acceptance:
 - Existing skills updated with appropriate stability values
 - Plugin README documents the stability field
 
+Implementation: `bio-research/skills/deprecated-demo/SKILL.md (stability: deprecated)`, `bio-research/skills/experimental-demo/SKILL.md (stability: experimental)`, `bio-research/skills/stability-demo/SKILL.md (stability: stable)`, `bio-research/skills/stability.py (parse/read/validate stability frontmatter + CLI)`
+
+Tests: `bio-research/skills/tests/test_skill_stability.py`, `bio-research/skills/tests/test_stability_module.py`
+
 ### chinese-content-quality-skill — Add Chinese content quality / anti-AI-slop skill for marketing plugin
 
 Status: planned
